@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DotDash Morse Library</title>
+</head>
+<body>
+    <H1>DotDash Morse Library</H1>
+    <H2>Currently Under Construction</H2>
+    <p>The public REST API can still be accessed at ./api/morse/generate</p>
+    <div>
+        <h3>Currently Available Parameters</h3>
+        <ul>
+            <li>[Required] morse = string; the morse you want to translate</li>
+            <li> [Optional] wpm = float; the speed of your morse in words per minute, Paris timing</li>
+            <li> [Optional] fwpm = float; the speed of gaps in your morse, sets to Farnsworth timing</li>
+            <li> [Optional] ms = float; if no wpm is included, sets the speed of your morse (the length of a dit/dot) in milliseconds</li>
+            <li> [Optional] fms = float; if included with ms, sets the length of gaps between words in milliseconds, using farnsworth time</li>
+            <li> [Optional] volume = int; the volume for the morse to be played at, out of 100</li>
+            <li> [Optional] frequency = int; the frequency to play at, in herz</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Example API calls </h3>
+        <ul>
+            <li>www.dotdashlibrary.com/api/morse/generate?morse=Hello World</li>
+            <li>www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25</li>
+            <li>www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25&fwpm=15&volume=50&frequency=900</li>
+        </ul>
+    </div>
+</body>
+</html>
