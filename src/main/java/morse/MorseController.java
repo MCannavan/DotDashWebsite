@@ -34,13 +34,13 @@ public class MorseController {
         IMorseTiming timing;
         if (wpm != null) {
             if(fwpm != null) {
-                timing = MorseTimingFactory.createFarnsworthTimingFromWpm(wpm,fwpm);
+                timing = MorseTimingFactory.createFarnsworthTimingFromWpm(fwpm,wpm);
             } else {
                 timing = MorseTimingFactory.createParisTimingFromWpm(wpm);
             }
         } else if (ms != null) {
             if(fms != null) {
-                timing = MorseTimingFactory.createFarnsworthTimingFromMs(ms, fms);
+                timing = MorseTimingFactory.createFarnsworthTimingFromMs(fms, ms);
             } else {
                 timing = MorseTimingFactory.createParisTimingFromMs(ms);
             }
