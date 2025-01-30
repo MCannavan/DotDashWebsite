@@ -9,15 +9,16 @@
     <header>
         <H1>DotDash Morse Library</H1>
     </header>
+
+    <main>
     <section>
         <H2>Currently Under Construction</H2>
         <p>The public REST API can still be accessed at www.dotdashlibrary.com/api/morse/generate</p>
     </section>
-    <main>
-
     <div>
         <h3>Currently Available Parameters</h3>
         <ul>
+
             <li>[Required] morse = string; the morse you want to translate</li>
             <li> [Optional] wpm = float; the speed of your morse in words per minute, Paris timing</li>
             <li> [Optional] fwpm = float; the speed of gaps in your morse, sets to Farnsworth timing</li>
@@ -30,9 +31,9 @@
     <div>
         <h3>Example API calls </h3>
         <ul>
-            <li>www.dotdashlibrary.com/api/morse/generate?morse=Hello World</li>
-            <li>www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25</li>
-            <li>www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25&fwpm=15&volume=50&frequency=900</li>
+            <li class="request-example">www.dotdashlibrary.com/api/morse/generate?morse=Hello World</li>
+            <li class="request-example">www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25</li>
+            <li class="request-example">www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25&fwpm=15&volume=50&frequency=900</li>
         </ul>
     </div>
     </main>
