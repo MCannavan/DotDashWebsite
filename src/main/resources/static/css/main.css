@@ -72,6 +72,15 @@ ul {
     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
+li a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+li a:hover {
+    color: var(--secondary);
+}
+
 .request-example {
     background-color: var(--light-secondary);
     font-family: monospace !important;

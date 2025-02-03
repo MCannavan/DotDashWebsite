@@ -40,6 +40,6 @@ public class MorseController {
 
     @GetMapping("/translate")
     public ResponseEntity<String> translate() {
-        return ResponseEntity.ok("Under Construction, please try again later");
+        return ResponseEntity.status(404).build();
     }
 }
