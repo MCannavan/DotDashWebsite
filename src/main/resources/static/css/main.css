@@ -1,10 +1,13 @@
 :root {
-    --primary: #42c57f;
+    --primary: #55fca3;
+    --primary-grad: linear-gradient(0deg, rgb(80, 240, 155) 0%, rgb(103, 225, 184) 100%);
+    --primary-grad-hover: linear-gradient(0deg, rgb(88, 255, 167) 0%, rgb(118, 255, 209) 100%);
     --secondary: #2ba65e;
     --success: #15e315;
     --info: #09d4e3;
     --warning: #f0ad4e;
     --danger: #d9534f;
+    --lighter: #f8f8f8;
     --light: #f0f0f0;
     --light-secondary: #dcdcdc;
     --dark: #343a40;
@@ -21,11 +24,8 @@ body {
 
 header {
     padding: 0 0 0 0;
-    position: sticky;
-    top: 0;
-    background-color: var(--primary);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+    height: 3rem;
+    font-size: 0.5em;
 }
 
 body > *:not(header) {
@@ -47,10 +47,29 @@ header h1 {
     color: var(--dark);
 }
 
+h1 a {
+    background: var(--primary-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+
+}
+
+h1 a:hover {
+    background: var(--primary-grad-hover);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+
+}
+
 ul {
+    background-color: var(--lighter);
+    padding: 2rem;
     list-style: none;
     min-width: fit-content;
     width: 70%;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
 .request-example {
@@ -62,4 +81,13 @@ ul {
     margin: 0.5rem 0;
     border-radius: 0.25rem;
     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+#title {
+    height: 50vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
 }

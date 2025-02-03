@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <title>DotDash Morse Library</title>
     <link rel="stylesheet" href="./css/main.css">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
     <header>
         <H1>DotDash Morse Library</H1>
     </header>
-
+    <section id="title">
+        <H1>Open REST api for the <a href="https://www.github.com/MCannavan/DotDashLib">DotDash</a> Library</H1>
+    </section>
     <main>
     <section>
-        <H2>Currently Under Construction</H2>
         <p>The public REST API can still be accessed at www.dotdashlibrary.com/api/morse/generate</p>
     </section>
     <div>
@@ -31,7 +39,9 @@
     <div>
         <h3>Example API calls </h3>
         <ul>
-            <li class="request-example">www.dotdashlibrary.com/api/morse/generate?morse=Hello World</li>
+            <li class="request-example">
+            <a href="api/morse/generate?morse=Hello World">www.dotdashlibrary.com/api/morse/generate?morse=Hello World</a>
+            </li>
             <li class="request-example">www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25</li>
             <li class="request-example">www.dotdashlibrary.com/api/morse/generate?morse=Hello World&wpm=25&fwpm=15&volume=50&frequency=900</li>
         </ul>

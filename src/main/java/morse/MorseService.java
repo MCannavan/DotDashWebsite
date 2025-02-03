@@ -8,15 +8,6 @@ import java.io.IOException;
 
 @Service
 public class MorseService {
-    private MorsePlayer morsePlayer;
-
-    public void setMorsePlayer(MorsePlayer morsePlayer) {
-        this.morsePlayer = morsePlayer;
-    }
-
-    public MorsePlayer getMorsePlayer() {
-        return morsePlayer;
-    }
 
     public byte[] generate(Float wpm, Float fwpm, Float ms, Float fms, int volume, Float frequency, String morse) {
         MorsePlayer.MorsePlayerBuilder morsePlayerBuilder = new MorsePlayer.MorsePlayerBuilder();
