@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("morse")
+@ComponentScan("generator")
 public class MorsewebsiteApplication {
 
     public static void main(String[] args) {

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+</head>
+<body>
+<div class="error-message" >
+  <h1>An Error has occurred...</h1>
+  <p>There seems to be a problem with your request
+    (<span th:text="${path}"></span>).</p>
+  <p th:text="${'Error ' + status + ' (' + error + ')'}"></p>
+  <p th:text="${'Further details: ' + message + '.'}"></p>
+  <a class="btn" href="/">Back to home</a>
+</div>
+</body>
+</html>
