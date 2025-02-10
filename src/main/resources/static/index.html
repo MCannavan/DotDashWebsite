@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DotDash Morse Library</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
@@ -13,15 +13,15 @@
     <link rel="manifest" href="/icons/site.webmanifest" />
 </head>
 <body>
-    <header>
-        <H1>DotDash Morse Library</H1>
+    <header th:fragment="header">
+        <H1><a href="">DotDash Morse Library</a></H1>
     </header>
     <section id="title">
         <H1>Open REST API for the <a href="https://www.github.com/MCannavan/DotDashLib">DotDash</a> Library</H1>
     </section>
     <main>
     <section>
-        <p>The public REST API can be accessed at www.dotdashlibrary.com/api/morse/generate</p>
+        <p>The public REST API can be accessed at www.dotdashlibrary.com/api/morse/generate?[your parameters] OR at <a href="/generator">www.dotdashlibrary.com/generator</a> </p>
     </section>
     <div>
         <h3>Currently Available Parameters</h3>
@@ -51,4 +51,8 @@
     </div>
     </main>
 </body>
+<footer th:fragment="footer">
+
+    <span>Having issues with the sight? Let me know at <a href="mailto:mark@mcannavan.dev">mark@mcannavan.dev</a></span>
+</footer>
 </html>

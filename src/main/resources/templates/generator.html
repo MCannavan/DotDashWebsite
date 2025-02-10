@@ -8,7 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-
+<header th:fragment="header">
+    <H1><a href="/">DotDash Morse Library</a></H1>
+</header>
 <div class="flex-form">
     <fieldset class="radio-buttons">
         <legend>Timing</legend>
@@ -113,6 +115,9 @@
 
     updateForm();
 </script>
+<footer th:fragment="footer">
 
+    <span>Having issues with the sight? Let me know at <a href="mailto:mark@mcannavan.dev">mark@mcannavan.dev</a></span>
+</footer>
 </body>
 </html>
