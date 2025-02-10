@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/generator.css" />
+    <title>Document</title>
+</head>
+<body>
+
+<div class="flex-form">
+    <fieldset class="radio-buttons">
+        <legend>Timing</legend>
+
+        <input type="radio" id="parisSelect" name="timingGroup" value="paris" checked />
+        <label for="parisSelect">Paris</label>
+
+        <input type="radio" id="farnsworthSelect" name="timingGroup" value="farnsworth" />
+        <label for="farnsworthSelect">Farnsworth</label>
+    </fieldset>
+
+    <fieldset class="radio-buttons">
+        <legend>Speed</legend>
+        <input type="radio" id="msSelect" name="speedGroup" value="ms" checked />
+        <label for="msSelect">Milliseconds</label>
+
+        <input type="radio" id="wpmSelect" name="speedGroup" value="wpm" />
+        <label for="wpmSelect">Words/min</label>
+    </fieldset>
+</div>
+
+<form action="/api/morse/generate" method="get">
+    <div class="">
+        <fieldset class="labelled-field">
+            <legend>Text</legend>
+            <label for="morse"></label><textarea class="text-area" id="morse" name="morse" placeholder="Lorem Ipsum dolor sit amet..."></textarea>
+        </fieldset>
+    </div>
+
+    <div class="">
+        <fieldset class="labelled-field" id="msFieldset">
+            <legend>Ms</legend>
+            <input type="number" id="ms" name="ms" step="1" min="1" value="60" />
+        </fieldset>
+
+        <fieldset class="labelled-field" id="fmsFieldset">
+            <legend>Farnsworth Ms</legend>
+            <input type="number" id="fms" name="farnsworthMs" step="1" min="1" value="60"/>
+        </fieldset>
+    </div>
+
+    <fieldset class="labelled-field" id="wpmFieldset">
+        <legend>Wpm</legend>
+        <input type="number" id="wpm" name="wpm" value="5"/>
+    </fieldset>
+
+    <fieldset class="labelled-field" id="fwpmFieldset">
+        <legend>Farnsworth Wpm</legend>
+        <input type="number" id="fwpm" name="farnsworthWpm" value="5"/>
+    </fieldset>
+
+    <fieldset class="labelled-field">
+        <legend>Frequency</legend>
+        <input type="number" id="frequency" name="frequency" step="100" value="700"/>
+    </fieldset>
+
+    <fieldset class="labelled-field">
+        <legend>Volume</legend>
+        <input type="number" id="volume" name="volume" step="5" min="0" max="100" value="100"/>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const parisRadio = document.getElementById('parisSelect');
+    const farnsworthRadio = document.getElementById('farnsworthSelect');
+    const msRadio = document.getElementById('msSelect');
+    const wpmRadio = document.getElementById('wpmSelect');
+
+    const msFieldset   = document.getElementById('msFieldset');
+    const fmsFieldset  = document.getElementById('fmsFieldset');
+    const wpmFieldset  = document.getElementById('wpmFieldset');
+    const fwpmFieldset = document.getElementById('fwpmFieldset');
+
+    function toggleFieldset(fieldset, reveal) {
+        const input = fieldset.querySelector('input');
+        if (reveal) {
+            fieldset.style.display = 'block';
+            input.disabled = false;
+        } else {
+            fieldset.style.display = 'none';
+            input.disabled = true;
+        }
+    }
+
+    function updateForm() {
+        const isFarnsworth = farnsworthRadio.checked;
+        const isMs = msRadio.checked;
+        const isWpm = wpmRadio.checked;
+
+        toggleFieldset(fmsFieldset,  isFarnsworth && isMs);
+        toggleFieldset(fwpmFieldset, isFarnsworth && isWpm);
+
+        toggleFieldset(msFieldset, isMs);
+        toggleFieldset(wpmFieldset, isWpm);
+    }
+
+    [parisRadio, farnsworthRadio, msRadio, wpmRadio].forEach(radio => {
+        radio.addEventListener('change', updateForm);
+    });
+
+    updateForm();
+</script>
+
+</body>
+</html>

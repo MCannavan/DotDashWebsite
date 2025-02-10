@@ -1,0 +1,80 @@
+
+:root {
+    --border-radius:    0.25rem;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--lighter);
+    color: var(--dark);
+}
+
+body > div,
+body > form,
+body > .flex-form {
+    width: 90%;
+    max-width: 800px;
+    margin: 1.5rem auto;
+}
+
+.flex-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+fieldset {
+    border: 1px solid var(--light-secondary);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 0.5rem auto;
+    min-width: 200px;
+}
+
+legend {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.25rem;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid var(--light);
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    background: var(--primary-grad);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+    background: var(--primary-grad-hover);
+}
+
+.text-area {
+    width: 100%;
+    min-height: 5rem;
+    resize: vertical;
+    border: 1px var(--light) solid;
+    border-radius: var(--border-radius);
+}
