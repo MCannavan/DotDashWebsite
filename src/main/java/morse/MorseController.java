@@ -41,8 +41,11 @@ public class MorseController {
 
         byte[] audioData = morseService.generate(wpm,fwpm,ms,fms,volume,frequency,morse);
 
+        System.out.println(morse);
+        System.out.println(wpm+" | "+fwpm+" | "+ms+" | "+fms+" | "+volume+" | "+frequency+" | ");
         return new ResponseEntity<>(audioData, headers, HttpStatus.OK);
     }
+
 
     @GetMapping("/translate")
     public ResponseEntity<String> translate() {
