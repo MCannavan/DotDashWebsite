@@ -5,6 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @RestController
 @RequestMapping("/api/morse")
 public class MorseController {
@@ -41,8 +44,12 @@ public class MorseController {
 
         byte[] audioData = morseService.generate(wpm,fwpm,ms,fms,volume,frequency,morse);
 
-        System.out.println(morse);
-        System.out.println(wpm+" | "+fwpm+" | "+ms+" | "+fms+" | "+volume+" | "+frequency+" | ");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        System.out.println("REQUEST AT "+timeFormat.format(new Date(System.currentTimeMillis())));
+        System.out.println("morse: "+morse);
+        System.out.println(wpm+" wpm | "+fwpm+" fwpm | "+ms+" ms | "+fms+" fms | "+volume+" volume | "+frequency+" frequency ");
+        System.out.println("------------------------------------------------");
         return new ResponseEntity<>(audioData, headers, HttpStatus.OK);
     }
 
